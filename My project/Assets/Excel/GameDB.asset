@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a8d30126b180d4b991660a5eb0f9f5, type: 3}
+  m_Name: GameDB
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: Sheet1
+    list:
+    - Index: 1
+      "\uCE90\uB9AD\uD130": "\uCE90\uB9AD\uD130_001"
+      hp: 50
+      mp: 5
+      dex: 9
+    - Index: 2
+      "\uCE90\uB9AD\uD130": "\uCE90\uB9AD\uD130_002"
+      hp: 50
+      mp: 10
+      dex: 2
+    - Index: 3
+      "\uCE90\uB9AD\uD130": "\uCE90\uB9AD\uD130_003"
+      hp: 50
+      mp: 20
+      dex: 3
+    - Index: 4
+      "\uCE90\uB9AD\uD130": "\uCE90\uB9AD\uD130_004"
+      hp: 50
+      mp: 30
+      dex: 4
+    - Index: 5
+      "\uCE90\uB9AD\uD130": "\uCE90\uB9AD\uD130_005"
+      hp: 50
+      mp: 40
+      dex: 5
+    - Index: 0
+      "\uCE90\uB9AD\uD130": 
+      hp: 0
+      mp: 0
+      dex: 0
