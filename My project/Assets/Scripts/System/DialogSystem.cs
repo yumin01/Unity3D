@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;                       //UI를 컨트롤 할 것이라서  추가
-using System;                               //Arrary 수전 기능을 사용 하기 위해 추가
+using System;                               //Array 수전 기능을 사용 하기 위해 추가
 
 public class DialogSystem : MonoBehaviour
 {
@@ -20,9 +20,31 @@ public class DialogSystem : MonoBehaviour
     public float typingSpeed = 0.1f;            // 텍스트 타이핑 효과의 재생 속도
     private bool isTypingEffect = false;        // 텍스트 타이핑 효과를 재생중인지
 
+    public Entity_Dialogue entity_dialogue;     //XLS로 들어온 데이터
+
     private void Awake()
     {
         SetAllClose();
+        if(dialogsDB)                                       //데이터를 읽기로 함
+        {
+            Array.Clear(dialogs, 0, dialogs.Length);        // 기존 dialogs 지움
+            Array.Resize(ref dialogs, entity_dialogue.sheets[0].list.Count);        //DB데이터에 있는 만큼 배열 변경
+
+            int ArrayCursor = 0;                                                    //DB에서 위치를 정할 때 관례적으로 명명
+
+            foreach(Entity_Dialogue.Param param in entity_dialogue.sheets[0].list)  //DB 시트에 있는 모든 데이터를 해당 시트 구조체 형태로 저장
+            {
+                dialogs[ArrayCursor].index = param.index;
+                dialogs[ArrayCursor].speakerUIindex = param.speakerUIindex;
+                dialogs[ArrayCursor].name = param.name;
+                dialogs[ArrayCursor].dialogue = param.dialogue;
+                dialogs[ArrayCursor].characterPath = param.characterPath;
+                dialogs[ArrayCursor].tweenType = param.tweenType;
+                dialogs[ArrayCursor].nextindex = param.nextindex;
+
+                ArrayCursor += 1;
+            }
+        }
     }
 
     public bool UpdateDialog(int currentIndex, bool InitType)
@@ -41,7 +63,7 @@ public class DialogSystem : MonoBehaviour
             if (isTypingEffect == true)
             {
                 isTypingEffect = false;
-                StopCoroutine("OnTypingText"); // 타이팡 효과를 중지하고, 현재 대사 전체를 출력함
+                StopCoroutine("OnTypingText");          // 타이핑 효과를 중지하고, 현재 대사 전체를 출력함
                 speakers[currentSpeakerIndex].objectArrow.SetActive(true);
                 return false;
             }
@@ -94,9 +116,9 @@ public class DialogSystem : MonoBehaviour
     private void SetNextDialog(int currentIndex)
     {
         SetAllClose();
-        currentDialogIndex = currentIndex; //다음 대사를 진행하도록
-        currentSpeakerIndex = dialogs[currentDialogIndex].speakerUIindex; //현재 화자 순번
-        SetActiveObjects(speakers[currentSpeakerIndex], true); //현재 화자의 대화 관련 오브젝트
+        currentDialogIndex = currentIndex;                                  //다음 대사를 진행하도록 함
+        currentSpeakerIndex = dialogs[currentDialogIndex].speakerUIindex;   //현재 화자 순번
+        SetActiveObjects(speakers[currentSpeakerIndex], true);              //현재 화자의 대화 관련 오브젝트
 
         // 현재 화자 이름 텍스트 설정
         speakers[currentSpeakerIndex].textName.text = dialogs[currentDialogIndex].name;
