@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class FOVSystem : MonoBehaviour
 {
-    public float viewRadius;        //시야 거리
-    public float viewAngle;         //시야 각
+    public float viewRadius;
+    public float viewAngle;
 
-    public LayerMask targetMask;    //Target 레이어에서 가져옴
-    public LayerMask obstacleMask;  //obstacleMask에서 가져옴 
+    public LayerMask targetMask;
+    public LayerMask obstacleMask;
 
-    public List<Transform> visibleTargets = new List<Transform>(); //보이는 타겟 
+    public List<Transform> visibleTargets = new List<Transform>();
+
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -19,13 +20,12 @@ public class FOVSystem : MonoBehaviour
 
     IEnumerator FindTargetsWithDelay(float delay)
     {
-        while(true)
+        while (true)
         {
             yield return new WaitForSeconds(delay);
             FindVisibleTargets();
         }
     }
-
     void FindVisibleTargets()
     {
         visibleTartgetColor(Color.white);
@@ -33,16 +33,16 @@ public class FOVSystem : MonoBehaviour
 
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
-        for(int i = 0; i < targetsInViewRadius.Length; i++)
+        for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
             Transform target = targetsInViewRadius[i].transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
 
-            if(Vector3.Angle(transform.forward, dirToTarget) < viewAngle/2)
+            if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
 
-                if(!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
+                if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
                     visibleTargets.Add(target);
                 }
@@ -52,19 +52,19 @@ public class FOVSystem : MonoBehaviour
         visibleTartgetColor(Color.green);
     }
 
-    public Vector3 DirFromAngle(float angleInDegrees, bool anglelsGlobal)
+    public Vector3 DirFromAngle(float angleInDegress, bool anglesGlobal)
     {
-        if(!anglelsGlobal)
+        if (!anglesGlobal)
         {
-            angleInDegrees += transform.eulerAngles.y;
+            angleInDegress += transform.eulerAngles.y;
         }
 
-        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+        return new Vector3(Mathf.Sin(angleInDegress * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegress * Mathf.Deg2Rad));
     }
 
     void visibleTartgetColor(Color color)
     {
-        for(int i = 0; i < visibleTargets.Count; i++)
+        for (int i = 0; i < visibleTargets.Count; i++)
         {
             visibleTargets[i].GetComponent<Renderer>().material.SetColor("_Color", color);
         }
