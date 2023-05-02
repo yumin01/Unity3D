@@ -23,3 +23,42 @@ Steps: 20, Sampler: DPM++ 2M Karras, CFG scale: 7, Seed: 4171433717, Size: 512x7
 ![image](https://github.com/shingugitvr000/VR_AI_2023/blob/main/Stable_Diffusion/i2i_Sample/00027-567447385.png?raw=true)
 
 # ControlNet 1.1
+
+
+# Linart
+![image](https://github.com/shingugitvr000/VR_AI_2023/blob/main/Stable_Diffusion/ControlNet/00002-4116192776.png?raw=true)
+
+prompt:
+> masterpiece, distinct, highres, brown hair
+
+Negative prompt:
+> blurry, Lowres
+
+
+---
+![image](https://github.com/shingugitvr000/VR_AI_2023/blob/main/Stable_Diffusion/ControlNet/00003-1348155737.png?raw=true)
+
+prompt:
+> masterpiece, distinct, highres, brown hair
+
+Negative prompt:
+> blurry, Lowres
+
+# Scribble
+![image](https://github.com/shingugitvr000/VR_AI_2023/blob/main/Stable_Diffusion/ControlNet/00016-723851581.png?raw=true)
+
+
+prompt:
+> white background, masterpiece, extremely detailed thick line drawing, 1girl, hoodie, animal gloves, skirt, sneakers
+
+Negative prompt:
+> Low_picture_quality, blurry
+
+# Suffle
+![image](https://github.com/shingugitvr000/VR_AI_2023/blob/main/Stable_Diffusion/ControlNet/00023-4132996418.png?raw=true)
+
+prompt:
+> masterpiece, distinct, highres, brown hair
+
+Negative prompt:
+>  blurry, Lowres
