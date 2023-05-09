@@ -62,3 +62,23 @@ prompt:
 
 Negative prompt:
 >  blurry, Lowres
+
+# Pix2Pix
+![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/Pix2Pix_Before.png?raw=true)
+![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/Pix2Pix_After.png?raw=true)
+
+# Tile
+![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/Tile_Before.png?raw=true)
+![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/Tile_After.png?raw=true)
+
+# Depth
+![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/depth_File.png?raw=true)
+![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/depth_After.png?raw=true)
+
+# Seg
+![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/Seg_Before.png?raw=true)
+![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/Seg_After.png?raw=true)
+
+# OpenPose
+![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/Openpose_Before.png?raw=true)
+![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/Openpose_After.png?raw=true)
