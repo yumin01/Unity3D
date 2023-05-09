@@ -82,3 +82,10 @@ Negative prompt:
 # OpenPose
 ![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/Openpose_Before.png?raw=true)
 ![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/Openpose_After.png?raw=true)
+
+# Reginal Promepter
+![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/00014-3479856542.png?raw=true)
+
+# Dynamic Prompts (WildCard)
+![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/00024-2685496293.png?raw=true)
+![image](https://github.com/yumin01/Unity3D/blob/main/Stable_Diffusion/ControlNet/00029-612008755.png?raw=true)
